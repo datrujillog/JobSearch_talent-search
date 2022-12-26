@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "e0a84f14-dc43-4798-99dc-29577474e965",
+		"name": "Sprint 1 (BackEnd)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "POST_USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Camilo Morales \",\r\n    \"email\": \"correo1@correo.com\",\r\n    \"password\": \"A12345678*\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"correo3@correo.com\",\r\n    \"password\": \"A12345678*\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_USER",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"correo3@correo.com\",\r\n    \"name\": \"NUEVO NOMBRE\",\r\n    \"role\": \"ADMIN\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/627c67419bc3b4b44ea370da",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"627c67419bc3b4b44ea370da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_USERS",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/627c67419bc3b4b44ea370da",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"627c67419bc3b4b44ea370da"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OFFER",
+			"item": [
+				{
+					"name": "POST_OFFER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oferta de prueba #2\",\r\n    \"country\": \"627d0dd129fdfa8e182ff01a\",\r\n    \"category\": \"627d0dd129fdfa8e182ff021\",\r\n    \"details\": {\r\n        \"salary\": 10000000,\r\n        \"modality\": \"REMOTO\",\r\n        \"seniority\": \"JUNIOR\",\r\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/offer/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"offer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_OFFER_BY_EMPLOYER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oferta de prueba\",\r\n    \"user\": \"6279cf8c17f49f33ded2101c\",\r\n    \"country\": \"6279cf8217f49f33ded21008\",\r\n    \"category\": \"6279cf8217f49f33ded21016\",\r\n    \"details\": {\r\n        \"salary\": 5000,\r\n        \"modality\": \"REMOTO\",\r\n        \"seniority\": \"JUNIOR\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/offer/6279cf8c17f49f33ded2101",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"offer",
+								"6279cf8c17f49f33ded2101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_OFFER",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oferta de prueba #3 actualizada # 1\",\r\n    \"country\": \"627d0dd129fdfa8e182ff013\",\r\n    \"category\": \"627d0dd129fdfa8e182ff01e\",\r\n    \"details\": {\r\n        \"salary\": 10000000,\r\n        \"modality\": \"REMOTO\",\r\n        \"seniority\": \"JUNIOR\",\r\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/offer/627d0e4a29fdfa8e182ff028",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"offer",
+								"627d0e4a29fdfa8e182ff028"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_OFFERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/offer",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"offer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_OFFER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oferta de prueba #3\",\r\n    \"country\": \"627d0dd129fdfa8e182ff012\",\r\n    \"category\": \"627d0dd129fdfa8e182ff01e\",\r\n    \"details\": {\r\n        \"salary\": 10000000,\r\n        \"modality\": \"REMOTO\",\r\n        \"seniority\": \"JUNIOR\",\r\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/offer/627d0e4a29fdfa8e182ff028",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"offer",
+								"627d0e4a29fdfa8e182ff028"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APPLICATION",
+			"item": [
+				{
+					"name": "POST_APPLICATION",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"offer\": \"627d0e4a29fdfa8e182ff028\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/application/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"application",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_APPLICATIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/application",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_APPLICATION",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/application/627d0ef1b4c63683ace7294f",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"application",
+								"627d0ef1b4c63683ace7294f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600&family=Titillium+Web:wght@300&display=swap");
+
+$primary-color: #fff;
+$secondary-color: #fcbb36;
+$dark-color: #212121;
+
+@mixin generate-box-shadow($color) {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    $color 0px 30px 60px -30px, $color 0px -2px 6px 0px inset;
+}
+
+body {
+  font-family: "Radio Canada", sans-serif;
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  color: $primary-color
+}
+
+.modal{
+  z-index: 5001;
+}
+
+.swal2-container {
+  z-index: 6000 !important;
+}
+
+/*#####################################
+INÍCIA SECCIÓN FORMS
+#####################################*/
+.custom-card {
+  @include generate-box-shadow($secondary-color);
+  border-radius: 10px;
+  img{
+    margin: 0 auto;
+    width: 70%;
+  }
+  .base-form {
+    input {
+      border-color: $secondary-color;
+      outline: none;
+      opacity: 0.7;
+      background-color: $dark-color;
+      color: $primary-color;
+    }
+
+    .link-form {
+      a {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+/*#####################################
+FINALIZA SECCIÓN FORMS
+#####################################*/
+
+/*#####################################
+INÍCIA SECCIÓN BUTTONS
+#####################################*/
+.button {
+  width: 100%;
+  position: relative;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: $dark-color;
+  color: $secondary-color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  // box-shadow: 0 0 10px $secondary-color, 0 0 25px $secondary-color, 0 0 50px $secondary-color;
+  border: $secondary-color;
+  transition-delay: 0.6s;
+}
+
+.button span {
+  position: absolute;
+}
+
+.button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $secondary-color);
+}
+
+.button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+}
+
+.button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $secondary-color);
+}
+
+.button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.35s;
+}
+
+.button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, $secondary-color);
+}
+
+.button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.17s;
+}
+
+.button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, $secondary-color);
+}
+
+.button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.52s;
+}
+
+.button:active {
+  background: $secondary-color;
+  background: linear-gradient(to top right, $secondary-color, $secondary-color);
+  color: $dark-color;
+  box-shadow: 0 0 8px $secondary-color, 0 0 8px $secondary-color,
+    0 0 8px $secondary-color;
+  transition: 0.1s;
+}
+
+.button:active
+  span:nth-child(1)
+  span:nth-child(2)
+  span:nth-child(2)
+  span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
+}
+
+/*#####################################
+FINALIZA SECCIÓN BUTTONS
+#####################################*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3c3c3c;
+  color: $primary-color;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  color: $primary-color;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: $secondary-color;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(85px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  content: "  POSTULANT";
+  color: $dark-color;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after {
+  content: "EMPLOYER";
+}
+
+/*--------- END --------*/
+
+.switch2 {
+  /* Variables */
+  --switch_width: 2em;
+  --switch_height: 1em;
+  --thumb_color: #e8e8e8;
+  --track_color: #e8e8e8;
+  --track_active_color: #888;
+  --outline_color: #000;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: var(--switch_width);
+  height: var(--switch_height);
+}
+
+/* Hide default HTML checkbox */
+.switch2 input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider2 {
+  box-sizing: border-box;
+  border: 2px solid var(--outline_color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--track_color);
+  transition: 0.15s;
+  border-radius: var(--switch_height);
+}
+
+.slider2:before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  height: var(--switch_height);
+  width: var(--switch_height);
+  border: 2px solid var(--outline_color);
+  border-radius: 100%;
+  left: -2px;
+  bottom: -2px;
+  background-color: var(--thumb_color);
+  transform: translateY(-0.2em);
+  box-shadow: 0 0.2em 0 var(--outline_color);
+  transition: 0.15s;
+}
+
+.switch2 input:checked + .slider2 {
+  background-color: var(--track_active_color);
+}
+
+.switch2 input:focus-visible + .slider2 {
+  box-shadow: 0 0 0 2px var(--track_active_color);
+}
+
+/* Raise thumb when hovered */
+.switch2 input:hover + .slider2:before {
+  transform: translateY(-0.3em);
+  box-shadow: 0 0.3em 0 var(--outline_color);
+}
+
+.switch2 input:checked + .slider2:before {
+  transform: translateX(calc(var(--switch_width) - var(--switch_height)))
+    translateY(-0.2em);
+}
+
+/* Raise thumb when hovered & checked */
+.switch2 input:hover:checked + .slider2:before {
+  transform: translateX(calc(var(--switch_width) - var(--switch_height)))
+    translateY(-0.3em);
+  box-shadow: 0 0.3em 0 var(--outline_color);
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

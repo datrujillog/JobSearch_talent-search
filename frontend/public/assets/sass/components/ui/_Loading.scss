@@ -1,0 +1,33 @@
+/*#####################################
+INÍCIA SECCIÓN LOADING
+#####################################*/
+.loading-spinner{
+    background-color: rgba(14, 13, 13, 0.7);
+    bottom: 0;
+    color: $primary-color;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    .loading-img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+   
+ }
+ 
+
+
+
+/*#####################################
+FINALIZA SECCIÓN LOADING
+#####################################*/

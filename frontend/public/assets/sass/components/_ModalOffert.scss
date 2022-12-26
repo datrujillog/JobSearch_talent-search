@@ -1,0 +1,31 @@
+.custom-card-offert {
+  .base-form {
+    input,
+    textarea,
+    select {
+      border-color: $secondary-color;
+      outline: none;
+      opacity: 0.7;
+      background-color: $dark-color;
+      color: $primary-color;
+    }
+    select {
+      outline: none;
+      scroll-behavior: smooth;
+    }
+    option {
+      background-color: $dark-color !important;
+    }
+  
+    select:focus {
+      border-color: $secondary-color !important;
+      box-shadow: none !important;
+    }
+    select:hover {
+      background-color: $dark-color !important;
+    }
+    .form-select select option:hover {
+      background-color: $dark-color !important;
+    }
+  }
+}
