@@ -3,7 +3,7 @@
      
 </p>
 
-# __JobSearch APP - TzuzulCode__
+# __JobSearch APP 
 ## SPRINT 1 de 3
 <br>
 
@@ -14,8 +14,7 @@
 
 ## Objetivos del Proyecto
 
-- Construir una Api utlizando Node, express y Mongo.
-- Afirmar y conectar los conceptos aprendidos en el TzuzulCode bootcamp.
+- Construir una Api utlizando Node, express y MongoDB.
 - Aplicar mejores prácticas.
 
 
